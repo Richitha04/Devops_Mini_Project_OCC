@@ -66,18 +66,18 @@ pipeline {
                     sh """
                 ssh -o StrictHostKeyChecking=no ec2-user@$EC2_HOST '
                 echo Pulling latest images...
-                docker pull advnagarajan/sample-backend:latest
-                docker pull advnagarajan/sample-frontend:latest
+                docker pull advnagarajan/devops-backend:latest
+                docker pull advnagarajan/devops-frontend:latest
 
                 echo Stopping old containers...
                 docker stop backend frontend sampleapp 2>/dev/null || true
                 docker rm backend frontend sampleapp 2>/dev/null || true
 
                 echo Starting backend on port 8000...
-                docker run -d --name backend -p 8000:8000 advnagarajan/sample-backend:latest
+                docker run -d --name backend -p 8000:8000 advnagarajan/devops-backend:latest
 
                 echo Starting frontend on port 80...
-                docker run -d --name frontend -p 80:80 advnagarajan/sample-frontend:latest
+                docker run -d --name frontend -p 80:80 advnagarajan/devops-frontend:latest
 
                 echo Deployment complete
                 '
