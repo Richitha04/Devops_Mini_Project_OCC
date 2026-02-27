@@ -1,5 +1,5 @@
 Gotham Criminal Registry 
-A full-stack web application built as part of a DevOps project, demonstrating CI/CD pipelines, containerization with Docker, and cloud deployment on AWS.
+A full-stack web application built as part of a DevOps Mini project, demonstrating CI/CD pipelines, containerization with Docker, and cloud deployment on AWS.
 
 
 Project Overview
