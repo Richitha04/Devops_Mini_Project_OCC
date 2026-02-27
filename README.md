@@ -6,9 +6,14 @@ A full-stack web application built as part of a DevOps project, demonstrating CI
 
 ## Project Overview
 
-Gotham Criminal Registry is a three-tier web application for tracking and managing criminals. The application consists of a frontend, backend, and database. The frontend and backend are independently containerized and deployed through and automated CI/CD pipeline. The database is hosted on AWS servers using the RDS service.
+Gotham Criminal Registry is a three-tier web application for tracking and managing criminals. The application consists of a frontend, backend, and database. The frontend and backend are independently containerized and deployed through and automated CI/CD pipeline. The database is hosted on AWS-owned servers using RDS.
 
 ---
+
+## DockerHub Repositories
+
+https://hub.docker.com/repository/docker/advnagarajan/devops-frontend
+https://hub.docker.com/repository/docker/advnagarajan/devops-backend
 
 ## Modules
 
