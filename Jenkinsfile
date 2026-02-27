@@ -55,5 +55,36 @@ pipeline {
             }
         }
 
+        stage('Deploy to EC2') {
+            when {
+                expression {
+                    return env.GIT_BRANCH?.endsWith('/main')
+                }
+            }
+            steps {
+                sshagent(['ec2-key']) {
+                    sh """
+                ssh -o StrictHostKeyChecking=no ec2-user@$EC2_HOST '
+                echo Pulling latest images...
+                docker pull advnagarajan/sample-backend:latest
+                docker pull advnagarajan/sample-frontend:latest
+
+                echo Stopping old containers...
+                docker stop backend frontend sampleapp 2>/dev/null || true
+                docker rm backend frontend sampleapp 2>/dev/null || true
+
+                echo Starting backend on port 8000...
+                docker run -d --name backend -p 8000:8000 advnagarajan/sample-backend:latest
+
+                echo Starting frontend on port 80...
+                docker run -d --name frontend -p 80:80 advnagarajan/sample-frontend:latest
+
+                echo Deployment complete
+                '
+                """
+                }
+            }
+        }
+
     }
 }
