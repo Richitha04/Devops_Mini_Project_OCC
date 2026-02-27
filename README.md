@@ -6,7 +6,7 @@ A full-stack web application built as part of a DevOps project, demonstrating CI
 
 ## Project Overview
 
-Gotham Criminal Registry is a three-tier web application for tracking and managing criminals. The application is split across three repositories — frontend, backend, and database — each independently containerized and deployed through an automated CI/CD pipeline.
+Gotham Criminal Registry is a three-tier web application for tracking and managing criminals. The application consists of a frontend, backend, and database. The frontend and backend are independently containerized and deployed through and automated CI/CD pipeline. The database is hosted on AWS servers using the RDS service.
 
 ---
 
