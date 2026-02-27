@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        FRONTEND_IMAGE = "advnagarajan/sample-frontend"
-        BACKEND_IMAGE  = "advnagarajan/sample-backend"
+        FRONTEND_IMAGE = "advnagarajan/devops-frontend"
+        BACKEND_IMAGE  = "advnagarajan/devops-backend"
         EC2_HOST = "13.232.211.135"
     }
 
